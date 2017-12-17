@@ -1,0 +1,15 @@
+<template>
+  <h1>To Do List</h1>
+  <ul>
+	<li style="list-style: none;" repeat.for="item of list">
+		<input type="checkbox" checked.bind="item.complete" />
+		<span css="text-decoration: ${item.complete ? 'line-through' : 'none'}">
+			${item.name}
+		</span>
+		<button click.delegate="remove(item)">Remove</button>
+	</li>
+  </ul>
+  <form submit.delegate="addTodo()">
+  <input type="text" value.bind='toAdd' /><button>Add</button>
+  </form>
+</template>
